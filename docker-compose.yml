@@ -12,8 +12,8 @@ services:
 
   mongo:
     image: mongo:latest
-    # ports:
-    #   - "27018:27017"
+    ports:
+      - "127.0.0.1:27019:27017"
     volumes:
       - mongo_data:/data/db
     networks:
