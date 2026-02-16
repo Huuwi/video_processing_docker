@@ -91,7 +91,7 @@ services:
   douyin_service:
     build: ../get_link_douyin_service
     ports:
-      - "8000:8000"
+      - "8000:80"
     networks:
       - video_net
 
