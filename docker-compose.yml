@@ -2,9 +2,9 @@ services:
   # --- Infrastructure ---
   rabbitmq:
     image: rabbitmq:3-management
-    ports:
-      - "5672:5672"
-      - "15672:15672"
+    # ports:
+    #   - "5672:5672"
+    #   - "15672:15672"
     volumes:
       - rabbitmq_data:/var/lib/rabbitmq
     networks:
@@ -12,8 +12,8 @@ services:
 
   mongo:
     image: mongo:latest
-    ports:
-      - "27018:27017"
+    # ports:
+    #   - "27018:27017"
     volumes:
       - mongo_data:/data/db
     networks:
@@ -21,9 +21,9 @@ services:
 
   minio:
     image: minio/minio
-    ports:
-      - "9000:9000"
-      - "9001:9001"
+    # ports:
+    #   - "9000:9000"
+    #   - "9001:9001"
     environment:
       MINIO_ROOT_USER: minioadmin
       MINIO_ROOT_PASSWORD: minioadmin
@@ -58,8 +58,8 @@ services:
   be:
     build: ../backend
     env_file: ../backend/.env
-    ports:
-      - "3001:3000"
+    # ports:
+    #   - "3001:3000"
     environment:
       - PORT=3000
     depends_on:
